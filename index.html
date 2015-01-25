@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+
+var interval = setInterval(function () {updateStatus();}, 15000);
+
+$(document).ready(function(){
+	updateStatus();
+});
+
+function updateStatus() {
+
+console.log("checking")
+	window.clearInterval(interval)
+	$.getJSON( "https://api.spark.io/v1/devices/53ff6b065067544850381287/status?access_token=a6c96c783d1ca41a1f36cafd0fcb101eefa04568")
+	.done(function( data ) 
+	{
+		console.log(data);
+	  if(data.result == 1) {
+	  	$('#status').attr('src', 'bath-busy.png');
+	  } else {
+	  	$('#status').attr('src', 'bath-free.png');
+	  }
+	})
+	.fail(function() 
+	{
+    	//alert("Could not find sensor");
+    	$('#status').attr('src', 'bath-offline.png');
+  	})
+  	.always(function() {
+	    console.log( "complete" );
+	    interval = setInterval(function () {updateStatus();}, 3000);
+	  });
+}
+
+</script>
+</head>
+
+
+<body>
+<img id="status" src="bath-offline.png" height="300" width="300">
+<br/>
+RED = Busy
+<br/>
+GREEN = Free
+<br/>
+GREY = Sensor offline
+<br/>
+
+</body>
+</html>
