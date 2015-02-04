@@ -1,0 +1,16 @@
+{
+  "name": "toilet-checker-server",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "pteyssedre",
+      "email": "pierre.teyssedre@gmail.com"
+    }
+  ],
+  "dependencies":{
+    "spark":">=0.2.6",
+    "node-gcm":">=0.9.14",
+    "cradle":">=0.6.9",
+    "restify":"*"
+  }
+}
