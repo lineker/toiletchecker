@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Toiletchecker</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="toilet_checker">Toilet Checker</string>
+    <string name="non_valid_play_service">PlayServices need to be updated</string>
+
+</resources>
