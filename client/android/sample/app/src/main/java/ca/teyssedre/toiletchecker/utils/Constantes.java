@@ -5,4 +5,7 @@ package ca.teyssedre.toiletchecker.utils;
  * at 21:36.
  */
 public class Constantes {
+
+    public static final String SENDER_ID = "Your-Sender-ID";
+    public static final String GCM_INTENT_SERVICE = "ca.teyssedre.gcm.GcmIntentService";
 }
